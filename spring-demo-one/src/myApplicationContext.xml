@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <bean id="mySpringBean" class="com.aeluri.springdemo.MySpringBean">
+	    <constructor-arg value="Praveen"></constructor-arg>
+	    <property name="id" value="125"></property>
+	    <property name="bean">
+<!-- 	    <idref bean= "Myid1" /> -->
+		<ref bean="Myid"/>	
+	    </property>
+	    
+    </bean>
+    <bean id="Myid" class="com.aeluri.springdemo.MyDepenedBean" lazy-init="false" >
+    
+    </bean>
+    
+    
+    </beans>
